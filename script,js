@@ -1,0 +1,237 @@
+$(document).ready(function() {
+    $("#loginForm").submit(function(event) {
+      event.preventDefault();
+      
+      var email = $("#email").val();
+      var password = $("#password").val();
+      
+      // Example validation (you can implement your own validation logic here)
+      if (email === "user@example.com" && password === "password") {
+        alert("Login successful!");
+        // Redirect or perform other actions after successful login
+      } else {
+        alert("Invalid email or password. Please try again.");
+      }
+    });
+  });
+//-------------------------------------------
+
+// $(document).ready(function(){
+//     $(".signup").click(function(){
+//         $("#loginForm").hide();
+//         $("#signupForm").show();
+//     });
+    
+//     $(".login").click(function(){
+//         $("#signupForm").hide();
+//         $("#loginForm").show();
+//     });
+// });
+
+
+  // $(document).ready(function(){
+  //   // Show Login Form by default
+  //   $('#loginForm').show();
+
+  //   // Show Create Account Form on Signup button click
+  //   $('#signupBtn').click(function(){
+  //     $('#loginForm').hide();
+  //     $('#signupForm').show();
+  //   });
+  // });
+
+// Validate and submit water intake form
+document.getElementById('waterForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  // Validate form fields
+  var waterDate = document.getElementById('waterDate').value;
+  var waterAmount = document.getElementById('waterAmount').value;
+  
+  if (waterDate === '' || waterAmount === '') {
+      alert('Please fill in all fields');
+      return;
+  }
+  
+  // Submit form (for demonstration, show a confirmation message)
+  alert('Water intake tracked successfully');
+  // You can also submit the form using AJAX if you want to handle it asynchronously
+});
+
+// Validate and submit meal tracking form
+document.getElementById('mealForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  // Validate form fields (similar to water intake form)
+  var mealDate = document.getElementById('mealDate').value;
+  var mealType = document.getElementById('mealType').value;
+  var calories = document.getElementById('calories').value;
+  // Additional validation checks...
+  
+  if (mealDate === '' || mealType === '' || calories === '') {
+      alert('Please fill in all fields');
+      return;
+  }
+  
+  // Submit form (for demonstration, show a confirmation message)
+  alert('Meal tracked successfully');
+});
+
+// Similar event listeners can be added for activity and sleep tracking forms
+
+  // -----------------------------------------------------------------------------------
+  document.getElementById("goalForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+    // Get form values
+    var goal = document.getElementById("goal").value;
+    var dueDate = document.getElementById("dueDate").value;
+    var reminderTime = document.getElementById("reminderTime").value;
+
+    // Perform validation if needed
+
+    // Store goal and reminder data (you can use localStorage, sessionStorage, or send to server)
+    var goalData = {
+        goal: goal,
+        dueDate: dueDate,
+        reminderTime: reminderTime
+    };
+    localStorage.setItem("goalData", JSON.stringify(goalData));
+
+    // Optionally, display a confirmation message to the user
+    alert("Goal and reminder set successfully!");
+
+    // You can redirect to another page or perform any other action here
+});
+// --------------------------------------------------------------------
+document.getElementById('calorieForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Get input values
+  var intake = parseInt(document.getElementById('calorieIntake').value);
+  var burn = parseInt(document.getElementById('calorieBurn').value);
+
+  // Calculate net calories
+  var netCalories = intake - burn;
+
+  // Display result
+  var resultElement = document.getElementById('calorieResult');
+  if (!isNaN(netCalories)) {
+      resultElement.textContent = 'Net Calories: ' + netCalories;
+  } else {
+      resultElement.textContent = 'Please enter valid numbers.';
+  }
+});
+// ------------------------------------------------------------------------------------------- sleep hour
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get form elements
+    const sleepDateInput = document.getElementById('sleepDate');
+    const sleepTimeInput = document.getElementById('sleepTime');
+    const sleepDurationInput = document.getElementById('sleepDuration');
+    const sleepQualityInput = document.getElementById('sleepQuality');
+
+    // Function to calculate sleep duration
+    function calculateSleepDuration() {
+      const sleepDate = new Date(sleepDateInput.value);
+      const sleepTime = new Date(`1970-01-01T${sleepTimeInput.value}`);
+      const wakeTime = new Date(sleepTime.getTime() + (sleepDurationInput.value * 60 * 60 * 1000));
+
+      // Calculate duration in hours
+      const durationHours = (wakeTime - sleepTime) / (1000 * 60 * 60);
+      // Update sleep duration input
+      sleepDurationInput.value = durationHours.toFixed(2);
+    }
+
+    // Function to track sleep quality automatically
+    function trackSleepQuality() {
+      const quality = (Math.random() * (10 - 1) + 1).toFixed(1); // Random quality between 1 and 10
+      // Update sleep quality input
+      sleepQualityInput.value = quality;
+    }
+
+    // Event listener for date and time inputs
+    sleepDateInput.addEventListener('change', calculateSleepDuration);
+    sleepTimeInput.addEventListener('change', calculateSleepDuration);
+
+    // Event listener for duration input (optional)
+    sleepDurationInput.addEventListener('change', trackSleepQuality);
+  });
+
+// user dashboard start here
+
+const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
+
+allSideMenu.forEach(item=> {
+	const li = item.parentElement;
+
+	item.addEventListener('click', function () {
+		allSideMenu.forEach(i=> {
+			i.parentElement.classList.remove('active');
+		})
+		li.classList.add('active');
+	})
+});
+
+
+
+
+// TOGGLE SIDEBAR
+const menuBar = document.querySelector('#content nav .bx.bx-menu');
+const sidebar = document.getElementById('sidebar');
+
+menuBar.addEventListener('click', function () {
+	sidebar.classList.toggle('hide');
+})
+
+
+
+
+
+
+
+const searchButton = document.querySelector('#content nav form .form-input button');
+const searchButtonIcon = document.querySelector('#content nav form .form-input button .bx');
+const searchForm = document.querySelector('#content nav form');
+
+searchButton.addEventListener('click', function (e) {
+	if(window.innerWidth < 576) {
+		e.preventDefault();
+		searchForm.classList.toggle('show');
+		if(searchForm.classList.contains('show')) {
+			searchButtonIcon.classList.replace('bx-search', 'bx-x');
+		} else {
+			searchButtonIcon.classList.replace('bx-x', 'bx-search');
+		}
+	}
+})
+
+
+
+
+
+if(window.innerWidth < 768) {
+	sidebar.classList.add('hide');
+} else if(window.innerWidth > 576) {
+	searchButtonIcon.classList.replace('bx-x', 'bx-search');
+	searchForm.classList.remove('show');
+}
+
+
+window.addEventListener('resize', function () {
+	if(this.innerWidth > 576) {
+		searchButtonIcon.classList.replace('bx-x', 'bx-search');
+		searchForm.classList.remove('show');
+	}
+})
+
+
+
+const switchMode = document.getElementById('switch-mode');
+
+switchMode.addEventListener('change', function () {
+	if(this.checked) {
+		document.body.classList.add('dark');
+	} else {
+		document.body.classList.remove('dark');
+	}
+})
+// user dashboard ends here

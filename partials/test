@@ -1,0 +1,239 @@
+ <!-- Modal water -->
+  <div class="modal fade" id="water" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="waterlabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="waterLabel" style="color:orangered;">Track your water amount with us today</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col">
+                    <form action="" method="post">
+                        <!-- Date and Time -->
+                        <div class="mb-3">
+                            <label for="waterDate" class="form-label">Date:</label>
+                            <input type="date" id="waterDate" name="date" class="form-control">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="waterTime" class="form-label">Time:</label>
+                            <input type="time" id="waterTime" name="time" class="form-control">
+                        </div>
+                      
+                        <!-- Amount -->
+                        <div class="mb-3">
+                            <label for="waterAmount" class="form-label">Amount (in ounces/ml):</label>
+                            <input type="number" id="waterAmount" name="waterAmount" class="form-control">
+                        </div>
+                      
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary" name="btn_sub" >Track Water Intake</button>
+                    </form>
+        
+                </div>
+            </div>            
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Modal Meal-->
+  <div class="modal fade" id="meal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="mealLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="mealLabel" style="color:orangered;">Track your meal with us today</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col">
+                    <form action="#" method="post">
+                        <!-- Date and Time -->
+                        <div class="mb-3">
+                            <label for="mealDate" class="form-label">Date:</label>
+                            <input type="date" id="mealDate" name="date" class="form-control">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="mealTime" class="form-label">Time:</label>
+                            <input type="time" id="mealTime" name="time" class="form-control">
+                        </div>
+                      
+                        <!-- Meal Type -->
+                        <div class="mb-3">
+                            <label for="mealType" class="form-label">Meal Type:</label>
+                            <select id="mealType" name="mealType" class="form-select">
+                                <option value="breakfast">Breakfast</option>
+                                <option value="lunch">Lunch</option>
+                                <option value="dinner">Dinner</option>
+                                <option value="snack">Snack</option>
+                                <!-- Add more meal types as needed -->
+                            </select>
+                        </div>
+                      
+                        <!-- Description -->
+                        <div class="mb-3">
+                            <label for="mealDescription" class="form-label">Description:</label>
+                            <textarea id="mealDescription" name="description" rows="5" class="form-control"></textarea>
+                        </div>
+                      
+                        <!-- Calories -->
+                        <div class="mb-3">
+                            <label for="calories" class="form-label">Calories:</label>
+                            <input type="number" id="calories" name="calories" class="form-control">
+                        </div>
+                      
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary" name="btn_sub" >Track Meal</button>
+                    </form>
+                    
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Modal Activity-->
+  <div class="modal fade" id="activity" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="activityLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-success" id="activityLabel">Track your Fitness activities with Rayfit wellness</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col ">
+                    <form action="#" method="post">
+                        <!-- Date and Time -->
+                        <div class="mb-3">
+                          <label for="activityDate" class="form-label">Date:</label>
+                          <input type="date" id="activityDate" name="date" class="form-control">
+                        </div>
+                        
+                        <div class="mb-3">
+                          <label for="activityTime" class="form-label">Time:</label>
+                          <input type="time" id="activityTime" name="time" class="form-control">
+                        </div>
+                      
+                        <!-- Activity Type -->
+                        <div class="mb-3">
+                          <label for="activityType" class="form-label">Activity Type:</label>
+                          <select id="activityType" name="activityType" class="form-select">
+                            <option value="running">Running</option>
+                            <option value="cycling">Cycling</option>
+                            <option value="swimming">Swimming</option>
+                            <option value="weightlifting">Weightlifting</option>
+                          </select>
+                        </div>
+                      
+                        <!-- Distance (for activities like running, cycling, etc.) -->
+                        <div class="mb-3">
+                          <label for="distance" class="form-label">Distance (in km/miles):</label>
+                          <input type="number" id="distance" name="distance" class="form-control">
+                        </div>
+                      
+                        <!-- Duration -->
+                        <div class="mb-3">
+                          <label for="duration" class="form-label">Duration (in minutes):</label>
+                          <input type="number" id="duration" name="duration" class="form-control">
+                        </div>
+                      
+                        <!-- Intensity Level -->
+                        <div class="mb-3">
+                          <label for="intensityLevel" class="form-label">Intensity Level (1-10):</label>
+                          <input type="number" id="intensityLevel" name="intensityLevel" min="1" max="10" class="form-control">
+                        </div>
+                      </form>
+                      
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+               <!-- Submit Button -->
+               <button type="submit" class="btn btn-primary" name = "btn_sub" >Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Modal SleepHour-->
+  <div class="modal fade" id="sleephour" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="sleephourLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="sleephourLabel" style="color:orangered;">Track your Sleeping hours with Rayfit wellness</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col">
+                    <form action="#" method="post">
+                        <div class="mb-3">
+                            <label for="sleepDate" class="form-label">Date:</label>
+                            <input type="date" id="sleepDate" name="date" class="form-control">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="sleepTime" class="form-label">Time to Bed:</label>
+                            <input type="time" id="sleepTime" name="time" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="sleepDuration" class="form-label">Duration (in hours):</label>
+                            <input type="number" id="sleepDuration" name="duration" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="sleepQuality" class="form-label">Sleep Quality (1-10):</label>
+                            <input type="number" id="sleepQuality" name="sleepQuality" min="1" max="10" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary" name="btn_sub" >Track Sleep</button>
+                    </form>
+                    
+                </div>
+              </div>
+            
+        </div>
+      </div>
+    </div>
+</div>
+  
+  <!-- Modal goal setting -->
+  <div class="modal fade" id="goal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="goalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="goalLabel" style="color:orangered;">Set your Goal and Reminder</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form id="goalForm">
+                <label for="goal">Goal:</label>
+                <input type="text" id="goal" name="goal" required>
+
+                <label for="dueDate">Due Date:</label>
+                <input type="date" id="dueDate" name="date" required>
+
+                <label for="reminderTime">Reminder Time:</label>
+                <input type="time" id="reminderTime" name="time" required>
+
+                <input type="submit" value="Set Goal" name="btn_sub" >
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,92 @@
+<?php
+
+    error_reporting(E_ALL);
+    session_start();
+    //echo password_hash('1234',PASSWORD_DEFAULT);
+
+
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <link href="fontawesome/css/all.min.css" rel="stylesheet">
+    <title>Rayfit</title>
+</head>
+<body style="background-color:beige;">
+  <div class="container">
+    <section>
+          <div class="row justify-content-center">
+            <div class="col-md-6 mt-5">
+                <div class="card">
+                    <div class="card-body">
+
+                    <?php
+
+                        if(isset($_SESSION['errormsg'])){
+                        echo "<div class='alert alert-danger'>". $_SESSION['errormsg']." </div>";
+                        session_unset();
+                        }
+
+                    ?>
+                        <form action="action_login.php" method="post">
+                            <h2 class="card-title text-center text-success ">Please Login here</h2> 
+                            <div class="mb-3">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="example@.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                    <span class="input-group-text" onclick="togglePassword()">
+                                        <i class="fa fa-eye" id="show_eye"></i>
+                                        <i class="fa fa-eye-slash d-none" id="hide_eye"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <p><a href="" class="forgot" style="text-decoration:none;">forgot password?</a></p>
+                            </div>
+                            <!-- <div class="d-grid"  style="justify-content:center;"><button type="submit" class="btn btn-block" style="background-color: darkblue; color:white;" value="Create Account"> -->
+                            <div class=" d-grid" style="justify-content:center;"><input type="submit" value="Submit" id="log_btn" class="btn btn-primary btn-block" name="log_btn"> <a href="index.php" data-bs-toggle="modal" data-bs-target="#login.php"></a></div>
+                            <p>Don't have an account <a href="signup.php"style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#signup.php">Signup</a></p>
+                            <p><a href="index.php" style="text-decoration: none;text-align:end;">Back to homepage</a></p>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </form>
+    </section>
+    
+    </div>
+    <script srd="jquery.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript function to toggle password visibility -->
+    <script>
+        function togglePassword() {
+            var passwordInput = document.getElementById("password");
+            var showEye = document.getElementById("show_eye");
+            var hideEye = document.getElementById("hide_eye");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                showEye.classList.add("d-none");
+                hideEye.classList.remove("d-none");
+            } else {
+                passwordInput.type = "password";
+                showEye.classList.remove("d-none");
+                hideEye.classList.add("d-none");
+            }
+        }
+    </script>
+
+</body>
+</html>
